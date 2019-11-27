@@ -1,4 +1,5 @@
 import React from 'react';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import {createAppContainer, createSwitchNavigator} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
@@ -15,22 +16,44 @@ const Routes = createAppContainer(
     Interests,
     BottomTabNavigator: createBottomTabNavigator(
       {
-        Home: createStackNavigator(
-          {
-            Home,
-            CompanyDetail,
-          },
-          {
-            defaultNavigationOptions: {
-              header: null,
+        Home: {
+          screen: createStackNavigator(
+            {
+              Home,
+              CompanyDetail,
             },
+            {
+              defaultNavigationOptions: {
+                header: null,
+              },
+            },
+          ),
+          navigationOptions: {
+            tabBarIcon: ({tintColor}) => (
+              <Icon name="home" size={24} color={tintColor}></Icon>
+            ),
           },
-        ),
-        Visits,
-        Profile,
+        },
+        Visits: {
+          screen: Visits,
+          navigationOptions: {
+            tabBarIcon: ({tintColor}) => (
+              <Icon name="local-activity" size={24} color={tintColor}></Icon>
+            ),
+          },
+        },
+        Profile: {
+          screen: Profile,
+          navigationOptions: {
+            tabBarIcon: ({tintColor}) => (
+              <Icon name="person" size={24} color={tintColor}></Icon>
+            ),
+          },
+        },
       },
       {
         tabBarOptions: {
+          showIcon: true,
           activeTintColor: '#333333',
           inactiveTintColor: '#C9C9C9',
           showLabel: false,

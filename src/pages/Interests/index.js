@@ -27,7 +27,7 @@ export default function Interests({navigation}) {
   }
 
   return (
-    <Wrapper title="Interests">
+    <Wrapper title="Interesses">
       <Container>
         {interests.map(interest => (
           <Interest text={interest} onPress={handleSelect} key={interest} />
