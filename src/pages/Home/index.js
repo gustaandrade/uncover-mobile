@@ -27,7 +27,9 @@ export default function Home({navigation}) {
     <Wrapper title="Experiências">
       <List
         data={companies}
-        renderItem={({item}) => <Company company={item} />}></List>
+        renderItem={({item}) => (
+          <Company company={item} navigation={navigation} />
+        )}></List>
     </Wrapper>
   );
 }

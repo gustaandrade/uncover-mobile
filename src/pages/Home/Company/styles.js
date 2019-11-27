@@ -3,7 +3,9 @@ import {Dimensions} from 'react-native';
 
 const {width} = Dimensions.get('window');
 
-export const Container = styled.ImageBackground.attrs({
+export const Container = styled.TouchableOpacity``;
+
+export const ImageBack = styled.ImageBackground.attrs({
   imageStyle: {borderRadius: 10},
 })`
   height: ${width - 40}px;
