@@ -13,21 +13,30 @@ import Profile from './pages/Profile';
 const Routes = createAppContainer(
   createSwitchNavigator({
     Interests,
-    BottomTabNavigator: createBottomTabNavigator({
-      Home: createStackNavigator(
-        {
-          Home,
-          CompanyDetail,
-        },
-        {
-          defaultNavigationOptions: {
-            header: null,
+    BottomTabNavigator: createBottomTabNavigator(
+      {
+        Home: createStackNavigator(
+          {
+            Home,
+            CompanyDetail,
           },
+          {
+            defaultNavigationOptions: {
+              header: null,
+            },
+          },
+        ),
+        Visits,
+        Profile,
+      },
+      {
+        tabBarOptions: {
+          activeTintColor: '#333333',
+          inactiveTintColor: '#C9C9C9',
+          showLabel: false,
         },
-      ),
-      Visits,
-      Profile,
-    }),
+      },
+    ),
   }),
 );
 
