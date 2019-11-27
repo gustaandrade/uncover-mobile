@@ -1,11 +1,9 @@
 import React from 'react';
-import {View, Text, TouchableOpacity} from 'react-native';
 
 import {Container} from './styles';
 
 import Wrapper from '../../components/Wrapper';
 import SmallCompany from '../../components/partials/SmallCompany';
-// import { Container } from '../../components/Wrapper/styles';
 
 export default function Visitis({navigation}) {
   let companies = [
@@ -38,10 +36,6 @@ export default function Visitis({navigation}) {
             companies.map(item => (
               <SmallCompany key={item.id} item={item} navigation={navigation} />
             ))}
-
-          {/* <TouchableOpacity onPress={() => navigation.navigate('CompanyDetail')}>
-          <Text>navigate to company detail</Text>
-        </TouchableOpacity> */}
         </Container>
       </Wrapper>
     </>

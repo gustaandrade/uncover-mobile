@@ -1,7 +1,10 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
+import {Image} from 'react-native';
 
 import Wrapper from '../../components/Wrapper';
 import Button from '../../components/Button';
+
+import Splash from '../../assets/splash.png';
 
 import {Container} from './styles';
 import Interest from './Interest';
@@ -17,6 +20,13 @@ const interests = [
 
 export default function Interests({navigation}) {
   const [selecteds, setSelecteds] = useState([]);
+  const [splash, setSplash] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setSplash(false);
+    }, 3000);
+  }, []);
 
   function handleSelect(text) {
     if (selecteds.includes(text)) {
@@ -24,6 +34,10 @@ export default function Interests({navigation}) {
     }
 
     return setSelecteds([...selecteds, text]);
+  }
+
+  if (splash) {
+    return <Image source={Splash} resizeMode="cover" />;
   }
 
   return (
@@ -35,6 +49,7 @@ export default function Interests({navigation}) {
       </Container>
 
       <Button
+        disabled={selecteds.length < 3}
         text="Proximo"
         onPress={() => navigation.navigate('BottomTabNavigator')}
       />

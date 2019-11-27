@@ -1,7 +1,7 @@
 import React from 'react';
-import {Text, ImageBackground, Image, View} from 'react-native';
+import {View} from 'react-native';
 
-import {Container, ImageBG, CompanyText, VisitDate} from './styles';
+import {Container, ImageBG, Content, CompanyText, VisitDate} from './styles';
 
 import Badge from '../../../components/Badge';
 
@@ -13,11 +13,13 @@ export default function SmallCompany({navigation, item}) {
     <Container
       onPress={() => navigation.navigate('CompanyDetail', {company: item})}>
       <ImageBG source={{uri: image}}>
-        <View>
-          <CompanyText>{name}</CompanyText>
-          <VisitDate>{date}</VisitDate>
-        </View>
-        <Badge status="INSCRITO" />
+        <Content>
+          <View>
+            <CompanyText>{name}</CompanyText>
+            <VisitDate>{date}</VisitDate>
+          </View>
+          <Badge status="INSCRITO" />
+        </Content>
       </ImageBG>
     </Container>
   );

@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
 
 export const Container = styled.TouchableOpacity`
-  background: #46debb;
+  background: ${props => (props.disabled ? '#d9d9d9' : '#46debb')};
   align-items: center;
   justify-content: center;
   height: 50px;

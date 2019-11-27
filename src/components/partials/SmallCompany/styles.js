@@ -8,10 +8,19 @@ export const ImageBG = styled.ImageBackground.attrs({
 })`
   flex-direction: row;
   height: 100px;
-  padding: 20px;
   margin-bottom: 20px;
-  justify-content: space-between;
 `;
+
+export const Content = styled.View`
+  flex: 1;
+  background: rgba(0, 0, 0, 0.3);
+  flex-direction: row;
+  padding: 20px;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+`;
+
 export const Container = styled.TouchableOpacity`
   flex: 1;
 `;

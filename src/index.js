@@ -6,6 +6,7 @@ import 'react-native-gesture-handler';
 
 export default function App() {
   Icon.loadFont();
+  console.disableYellowBox = true;
 
   return <Routes />;
 }

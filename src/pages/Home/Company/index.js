@@ -1,20 +1,28 @@
 import React from 'react';
-import {View} from 'react-native';
 
 import Badge from '../../../components/Badge';
 
-import {Container, ImageBack, Title, Date} from './styles';
+import {
+  Container,
+  ImageBack,
+  Content,
+  TitleContainer,
+  Title,
+  Date,
+} from './styles';
 
 export default function Company({company, navigation}) {
   return (
-    <Container onPress={() => navigation.navigate('CompanyDetail', {id: 3})}>
+    <Container onPress={() => navigation.navigate('CompanyDetail', {company})}>
       <ImageBack source={{uri: company.image}}>
-        <Badge status="INSCRITO" />
+        <Content>
+          <Badge status={company.subscribed} />
 
-        <View>
-          <Title>{company.name}</Title>
-          <Date>{company.date}</Date>
-        </View>
+          <TitleContainer>
+            <Title>{company.name}</Title>
+            <Date>{company.date}</Date>
+          </TitleContainer>
+        </Content>
       </ImageBack>
     </Container>
   );
